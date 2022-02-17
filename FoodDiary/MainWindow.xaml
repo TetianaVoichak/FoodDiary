@@ -5,8 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FoodDiary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="FoodDiary" Height="600" Width="1000" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="361*"/>
+            <ColumnDefinition Width="623*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="3" Background="#FFC1E7E5">
+            <TabItem Header="Мой дневник">
+                <Grid Background="#FFC1E7E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*"/>
+                        <ColumnDefinition Width="432*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="textBlockAim" HorizontalAlignment="Left" Margin="1,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="100" Foreground="#FFE52A2A" Grid.Column="1"/>
+                    <DatePicker x:Name="elementChoiseDate" HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top" Height="50" Width="200" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="textBlockDateToday" Grid.Column="1" HorizontalAlignment="Left" Margin="274,10,0,0" Text="Твое питание" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="149"/>
+                    <ComboBox x:Name="comboBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="189,62,0,0" VerticalAlignment="Top" Width="283" Height="46"/>
+                    <Label Content="Завтрак" Grid.Column="1" HorizontalAlignment="Left" Margin="189,36,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Обед" Grid.Column="1" HorizontalAlignment="Left" Margin="189,139,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="comboBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="189,166,0,0" VerticalAlignment="Top" Width="283" Height="46" RenderTransformOrigin="0.5,0.5">
+                    </ComboBox>
+                    <Label Content="Перекус" Grid.Column="1" HorizontalAlignment="Left" Margin="197,250,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="comboBox3" Grid.Column="1" HorizontalAlignment="Left" Margin="189,280,0,0" VerticalAlignment="Top" Width="283" Height="46"/>
+                    <Label Content="Ужин" Grid.Column="1" HorizontalAlignment="Left" Margin="195,360,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.178,-0.125"/>
+                    <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="189,390,0,0" VerticalAlignment="Top" Width="283" Height="46"/>
+                    <Button x:Name="buttonAddDish1" Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="501,62,0,0" VerticalAlignment="Top" Height="45" Width="45" FontSize="24" Click="buttonAddDish1_Click"/>
+                    <Button x:Name="buttonAddDish2" Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="501,166,0,0" VerticalAlignment="Top" Width="45" Height="45" FontSize="24" Click="buttonAddDish2_Click"/>
+                    <Button x:Name="buttonAddDish3" Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="501,285,0,0" VerticalAlignment="Top" Width="45" Height="45" FontSize="24" Click="buttonAddDish3_Click"/>
+                    <Button x:Name="buttonAddDish4" Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="501,390,0,0" VerticalAlignment="Top" FontSize="24" Height="45" Width="45" Click="buttonAddDish4_Click"/>
+                    <Label Content="Всего каллорий" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.971,0.664"/>
+                    <Label Content="Белки(грамм)" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlockMaxProtein" HorizontalAlignment="Left" Margin="2,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Жиры(грамм)" HorizontalAlignment="Left" Margin="12,215,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="textBlockMaxFlat" HorizontalAlignment="Left" Margin="2,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Углеводы(грамм)" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.787,-0.58"/>
+                    <TextBlock x:Name="textBlockMaxUglev" HorizontalAlignment="Left" Margin="2,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1"/>
+                    <Label Content="Потраченно каллорий" HorizontalAlignment="Left" Margin="570,87,0,0" VerticalAlignment="Top" Height="41" Width="136" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlockCalNow" HorizontalAlignment="Left" Margin="738,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFDC3420" Grid.Column="1"/>
+                    <Label Content="Белки" HorizontalAlignment="Left" Margin="570,145,0,0" VerticalAlignment="Top" Width="124" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlockProteinNow" HorizontalAlignment="Left" Margin="738,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBlock x:Name="textBlockFatNow" HorizontalAlignment="Left" Margin="575,189,0,0" Text="Жири" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.293,0.717" Width="44" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="738,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Углеводы" HorizontalAlignment="Left" Margin="570,230,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBlock x:Name="textBoxCarNow" HorizontalAlignment="Left" Margin="738,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Профиль" Height="22" Margin="-2,-2,-2,0" VerticalAlignment="Top" >
+                <Grid Background="#FFC1E7E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="36*"/>
+                        <ColumnDefinition Width="14"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="935*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="buttonEditAim" Content="Редактировать цель" VerticalAlignment="Top" HorizontalAlignment="Left"   Margin="14,50,0,0"  Height="50" Width="244" FontSize="24" Click="buttonEditAim_Click" Grid.ColumnSpan="3" Grid.Column="1" />
 
+                    <Label Content="Калл" HorizontalAlignment="Left" Margin="14,131,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <Label Content="Белки(%)" HorizontalAlignment="Left" Margin="14,174,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+
+                    <Label Content="Жиры(%)" HorizontalAlignment="Left" Margin="14,230,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <Label Content="Углеводы(%)" HorizontalAlignment="Left" Margin="14,270,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+
+                    <TextBox x:Name="textBoxCal" HorizontalAlignment="Left" Margin="67,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Height="39" Grid.Column="3"/>
+                    <TextBox x:Name="textBoxProtein" HorizontalAlignment="Left" Margin="67,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Height="39" Grid.Column="3"/>
+                    <TextBox x:Name="TextBoxFat" HorizontalAlignment="Left" Margin="67,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Height="39" Grid.Column="3"/>
+                    <TextBox x:Name="TextBoxCar" HorizontalAlignment="Left" Margin="67,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Height="39" Grid.Column="3" />
+                </Grid>
+
+            </TabItem>
+
+
+        </TabControl>
     </Grid>
 </Window>

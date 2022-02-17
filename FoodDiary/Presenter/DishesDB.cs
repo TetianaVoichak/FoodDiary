@@ -1,18 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using FoodDiary.Model;
 
 namespace FoodDiary.Presenter
 {
-    class DishesDB
+    class DishesDB : IngredientsDB
     {
-        Dish dish = null;
+        public Dish dish;
+        string name;
+        int countDish;
         List<Ingredient> ingredientsList = null;
-        public DishesDB(string name)
+        public string Name
         {
-            this.dish = new Dish(name);
+            get { return name; }
         }
-
+        public DishesDB(Dish dish)
+        {
+            this.dish = dish;
+        }
+        public DishesDB()
+        {
+            IngredientsDB ingr = new IngredientsDB();
+        }
+        public DishesDB(string name, List<Ingredient> list, int countDish)
+        {
+            this.name = name;
+            ingredientsList = list;
+            this.countDish = countDish;
+        }
         public void RemoveIngredient(Ingredient item)
         {
             ingredientsList.Remove(item);
@@ -20,6 +36,10 @@ namespace FoodDiary.Presenter
         public void AddIngredients(Ingredient item)
         {
             ingredientsList.Add(item);
+        }
+        public void SaveDish()
+        {
+
         }
 
     }
