@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Aim xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <MaxCalories>1500</MaxCalories>
+  <MaxCalories>1800</MaxCalories>
   <ProteinPercent>20</ProteinPercent>
   <FatPercent>30</FatPercent>
   <CarbohydratePercent>50</CarbohydratePercent>

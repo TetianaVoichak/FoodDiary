@@ -5,7 +5,7 @@ using FoodDiary.Model;
 
 namespace FoodDiary.Presenter
 {
-    class DishesDB : IngredientsDB
+    class DishesDB : IngredientsInput
     {
         public Dish dish;
         string name;
@@ -21,7 +21,7 @@ namespace FoodDiary.Presenter
         }
         public DishesDB()
         {
-            IngredientsDB ingr = new IngredientsDB();
+            IngredientsInput ingr = new IngredientsInput();
         }
         public DishesDB(string name, List<Ingredient> list, int countDish)
         {

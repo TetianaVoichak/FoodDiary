@@ -17,7 +17,7 @@ namespace FoodDiary.Model
         string name;
         int countDishes;
         int energyValue;
-        double maxCarbohydrate, maxProtein, maxFat;
+        float maxCarbohydrate, maxProtein, maxFat;
         Dictionary<Ingredient, int> ingridientCount = new Dictionary<Ingredient, int>();
 
         public int IdDish
@@ -63,7 +63,7 @@ namespace FoodDiary.Model
         /// <summary>
         /// Количество углеводов в блюде
         /// </summary>
-        public double MaxCarbohydrate
+        public float MaxCarbohydrate
         {
             get
             {
@@ -73,7 +73,7 @@ namespace FoodDiary.Model
         /// <summary>
         /// Количество белков в блюде
         /// </summary>
-        public double MaxProtein
+        public float MaxProtein
         {
             get { return maxProtein; }
         }
@@ -81,7 +81,7 @@ namespace FoodDiary.Model
         /// <summary>
         /// Количество жиров в блюде
         /// </summary>
-        public double MaxFat
+        public float MaxFat
         {
             get { return maxFat; }
         }
@@ -120,8 +120,8 @@ namespace FoodDiary.Model
         /// <returns></returns>
         int EnergyValueMethodForDish()
         {
-            int c = EnergyValueMethod(maxProtein, maxFat, maxCarbohydrate);
-            double  temp = c / (double)maxCountDishes;
+            float c = EnergyValueMethod(maxProtein, maxFat, maxCarbohydrate);
+            float  temp = c / (float)maxCountDishes;
             energyValue =  (int)(temp * 100);
             return energyValue;
         } 

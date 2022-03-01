@@ -23,7 +23,7 @@ namespace FoodDiary
     public partial class MainWindow : Window
     {
         DishesDB dishes;
-        IngredientsDB ingredients;
+        IngredientsInput ingredients;
         AimInput aimInput;
 
 
@@ -56,28 +56,10 @@ namespace FoodDiary
             textBlockMaxFlat.Text = aimInput.FatGram.ToString();
             textBlockMaxUglev.Text = aimInput.CarbohydrateGram.ToString();
         }
-        private void MyMethod()
-        {
-            Dish dish_my = new Dish(1,"Салат из помидоров и огурцов");
-            
-            Ingredient ingredient_my = new Ingredient(1,"Помидор", 0.6, 0.2, 4.2);
-            dish_my.AddIngredient(ingredient_my, 100);
-
-
-            ingredient_my = new Ingredient(2,"Огурец", 0.8, 0.1, 2.8);
-            dish_my.AddIngredient(ingredient_my, 100);
-
-            ingredient_my = new Ingredient(3,"Сметана Президент 15%", 2.6, 15, 3.9);
-            dish_my.AddIngredient(ingredient_my, 100);
-
-           // myTextBlock.Text = dish_my.Name + " " + dish_my.EnergyValue;
-
-            RepastInput repastInput = new RepastInput();
-            //textBlock2.Text = repastInput.Show();
-        }
+       
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MyMethod();
+          
         }
        
 

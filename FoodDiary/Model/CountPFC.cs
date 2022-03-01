@@ -11,13 +11,13 @@ namespace FoodDiary.Model
    
     public abstract class CountPFC  
     {
-        [NonSerialized]
+
         public const int CAL_IN_ONE_FAT = 9;
-        [NonSerialized]
+    
         public const int CAL_IN_ONE_PROTEIN = 4;
-        [NonSerialized]
+
         public const int CAL_IN_ONE_CARB = 4;
-        [NonSerialized]
+    
         public const int PERCENT = 100;
 
         /// <summary>

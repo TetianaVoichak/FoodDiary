@@ -7,13 +7,13 @@ namespace FoodDiary.Model
     /// <summary>
     /// Класс для подсчета энергетической ценности
     /// </summary>
-    abstract class EnergyValueClass : CountPFC
+    public abstract class EnergyValueClass : CountPFC
     {
         string name;
-        double protein;
-        double fat;
-        double carbohydrate;
-        int energyValue;
+        float protein;
+        float fat;
+        float carbohydrate;
+        float energyValue;
 
         /// <summary>
         /// Название ингредиента или блюда, для чего подсчитывается энергетическая ценность
@@ -26,7 +26,7 @@ namespace FoodDiary.Model
         /// <summary>
         /// Белки 
         /// </summary>
-        public double Protein
+        public float Protein
         {
             get { return protein; }
             set { protein = value; }
@@ -34,7 +34,7 @@ namespace FoodDiary.Model
         /// <summary>
         /// Жиры
         /// </summary>
-        public double Fat
+        public float Fat
         {
             get { return fat; }
             set { fat = value; }
@@ -42,7 +42,7 @@ namespace FoodDiary.Model
         /// <summary>
         /// Углеводы
         /// </summary>
-        public double Carbohydrate
+        public float Carbohydrate
         {
             get { return carbohydrate; }
             set { carbohydrate = value; }
@@ -51,11 +51,11 @@ namespace FoodDiary.Model
         /// <summary>
         /// ????
         /// </summary>
-        public int EnergyValue
+        public float EnergyValue
         {
             get
             {
-                energyValue = (int)(carbohydrate * CAL_IN_ONE_CARB + protein * CAL_IN_ONE_PROTEIN + fat * CAL_IN_ONE_FAT);
+                energyValue = carbohydrate * CAL_IN_ONE_CARB + protein * CAL_IN_ONE_PROTEIN + fat * CAL_IN_ONE_FAT;
                 return energyValue;
             }
             set { energyValue = value; }
@@ -67,9 +67,9 @@ namespace FoodDiary.Model
         /// <param name="fat"></param>
         /// <param name="carbohydrate"></param>
         /// <returns></returns>
-        public int EnergyValueMethod(double protein, double fat, double carbohydrate)
+        public float EnergyValueMethod(float protein, float fat, float carbohydrate)
         {
-            return (int)(carbohydrate * CAL_IN_ONE_CARB + protein * CAL_IN_ONE_PROTEIN + fat * CAL_IN_ONE_FAT);
+            return carbohydrate * CAL_IN_ONE_CARB + protein * CAL_IN_ONE_PROTEIN + fat * CAL_IN_ONE_FAT;
         }
 
 

@@ -22,17 +22,14 @@ namespace FoodDiary
         /// <summary>
         /// В список записываем добавленные продукты(или блюда) что бы передать на первое окно в меню дня
         /// </summary>
-        List<IngredientDb> listIngr = new List<IngredientDb>();
+
+        IngredientsInput ingredientsInput; 
+
         public Window1()
         {
             InitializeComponent();
-            using (DataBaseFoodDiaryContext context = new DataBaseFoodDiaryContext())
-            {
-                var listIngredientsOrDishes = context.IngredientDb.ToList();
-
-                tableIngredientsOrDishes.ItemsSource = listIngredientsOrDishes;
-            }
-
+            ingredientsInput = new IngredientsInput();
+            tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
         }
         /// <summary>
         /// Добавить в текущий день свое меню(продукты или блюда)
@@ -63,8 +60,8 @@ namespace FoodDiary
 
             //listIngr.Add( = tableIngredientsOrDishes.CurrentCell.Column[0] = 
             //listIngr.Add(tableIngredientsOrDishes.CurrentCell as IngredientDb);
-            IngredientDb ingr = (IngredientDb)tableIngredientsOrDishes.SelectedItem;
-            listIngr.Add(ingr);
+            IngredientDB ingr = (IngredientDB)tableIngredientsOrDishes.SelectedItem;
+           // listIngr.Add(ingr);
         }
 
 
@@ -72,13 +69,13 @@ namespace FoodDiary
         {
             try
             {
-                if (listIngr != null)
-                {
-                   /// using (DataBaseFoodDiaryContext context = new DataBaseFoodDiaryContext())
-                    //{
-                       // context.IngredientDb.AddRange(listIngr);
-                  //  }
-                }
+                //if (listIngr != null)
+                //{
+                //   /// using (DataBaseFoodDiaryContext context = new DataBaseFoodDiaryContext())
+                //    //{
+                //       // context.IngredientDb.AddRange(listIngr);
+                //  //  }
+                //}
                
             }
             catch(Exception ex)
@@ -100,6 +97,31 @@ namespace FoodDiary
         private void textBoxProtein_MouseEnter(object sender, MouseEventArgs e)
         {
             textBoxProtein.Text = "";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+
+        /// <summary>
+        /// Добавление записи в бд
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                ingredientsInput.AddIngredients(textBoxName.Text, Convert.ToSingle(textBoxProtein.Text), Convert.ToSingle(textBoxFat.Text), Convert.ToSingle(textBoxCarb.Text));
+                tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
