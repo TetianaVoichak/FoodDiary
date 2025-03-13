@@ -23,13 +23,25 @@ namespace FoodDiary
         /// В список записываем добавленные продукты(или блюда) что бы передать на первое окно в меню дня
         /// </summary>
 
-        IngredientsInput ingredientsInput; 
+        IngredientsInput ingredientsInput;
+        EnumRepast currentRepast;
+        DateTime currentDate;
+        Repastes repastes;
 
         public Window1()
         {
             InitializeComponent();
             ingredientsInput = new IngredientsInput();
             tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
+        }
+        public Window1(EnumRepast er, DateTime d)
+        {
+            InitializeComponent();
+            currentRepast = er;
+            currentDate = d;
+            ingredientsInput = new IngredientsInput();
+            tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
+
         }
         /// <summary>
         /// Добавить в текущий день свое меню(продукты или блюда)
@@ -68,15 +80,23 @@ namespace FoodDiary
         private void buttonInputLineWithProduct_Click(object sender, RoutedEventArgs e)
         {
             try
-            {
-                //if (listIngr != null)
-                //{
-                //   /// using (DataBaseFoodDiaryContext context = new DataBaseFoodDiaryContext())
-                //    //{
-                //       // context.IngredientDb.AddRange(listIngr);
-                //  //  }
-                //}
+            {/*
+                 if (listIngr != null)
+                 {
+                  using (databasefooddiarycontext context = new databasefooddiarycontext())
+                  {
+                      context.ingredientdb.addrange(listingr);
+                  }
+                  }*/
+
+                
                
+                Repastes repastes = new Repastes();
+
+
+                repastes.IdProduct = int.Parse(tableIngredientsOrDishes.CurrentItem.ToString());
+               
+
             }
             catch(Exception ex)
             {
@@ -114,7 +134,6 @@ namespace FoodDiary
         {
             try
             {
-
                 ingredientsInput.AddIngredients(textBoxName.Text, Convert.ToSingle(textBoxProtein.Text), Convert.ToSingle(textBoxFat.Text), Convert.ToSingle(textBoxCarb.Text));
                 tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
             }
@@ -122,6 +141,25 @@ namespace FoodDiary
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        /// <summary>
+        /// Удаление записи из бд
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //MessageBox.Show("Do you realy want to delete selected item?");
+                ingredientsInput.RemoveIngredient((IngredientDB)tableIngredientsOrDishes.SelectedItem);
+                tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 }

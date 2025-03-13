@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kZ2lkT6g1oohgJ900ngM1dm0Pe+0Pek+CZd+0IbpbPew10pTjvhgLK+wH1pTHUYRFycAID1ZPo1Vadpm96pUbg==",
+  "dgSpecHash": "Mhx7asUhpes=",
   "success": true,
-  "projectFilePath": "E:\\FoodDiary\\FoodDiary\\FoodDiary.csproj",
+  "projectFilePath": "E:\\Projekts gitHub\\FoodDiary\\FoodDiary\\FoodDiary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Татьяна\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\Татьяна\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

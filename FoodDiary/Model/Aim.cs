@@ -9,7 +9,7 @@ namespace FoodDiary.Model
     /// Класс описывает цель установливаемую пользователем
     /// </summary>
     [Serializable]
-    public class Aim : CountPFC
+    public class Aim
     {
        
         private int maxCalories; 
@@ -70,7 +70,7 @@ namespace FoodDiary.Model
         [XmlIgnore]
         public int ProteinGram
         {
-            get { return FormulaCountProteinInGram(maxCalories, proteinPercent); }
+            get { return CountPFC.FormulaCountProteinInGram(maxCalories, proteinPercent); }
             //set { maxCalories = value; }
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace FoodDiary.Model
         [XmlIgnore]
         public int FatGram
         {
-            get { return FormulaCountFatInGram(maxCalories,fatPercent); }
+            get { return CountPFC.FormulaCountFatInGram(maxCalories,fatPercent); }
             //set { fatPercent = value; }
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace FoodDiary.Model
         [XmlIgnore]
         public int CarbohydrateGram
         {
-            get { return FormulaCountCarboInGram(maxCalories,carbohydratePercent); }
+            get { return CountPFC.FormulaCountCarboInGram(maxCalories,carbohydratePercent); }
             //set { carbohydratePercent = value; }
         }
         

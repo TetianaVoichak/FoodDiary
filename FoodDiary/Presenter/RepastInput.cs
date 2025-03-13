@@ -7,13 +7,16 @@ namespace FoodDiary.Presenter
 {
     class RepastInput
     {
-        RepastClass repast;
-
+        //RepastClass repast;
+        Repastes repast;
         public RepastInput()
         {
            
+
         }
 
-       
+      
+
+
     }
 }

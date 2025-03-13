@@ -9,7 +9,7 @@ namespace FoodDiary.Model
     /// Класс для подсчета БЖУ
     /// </summary>
    
-    public abstract class CountPFC  
+    public static class CountPFC  
     {
 
         public const int CAL_IN_ONE_FAT = 9;
@@ -24,7 +24,7 @@ namespace FoodDiary.Model
         /// Формула подсчета бжу (белки)
         /// </summary>
         /// <returns></returns>
-        public int FormulaCountProteinInGram(int calories, int percent)
+        public static int FormulaCountProteinInGram(int calories, int percent)
         {
             double temp = calories * ((double)percent / PERCENT) / CAL_IN_ONE_PROTEIN;
             return (int)(calories * ((double)percent / PERCENT) / CAL_IN_ONE_PROTEIN);
@@ -34,7 +34,7 @@ namespace FoodDiary.Model
         /// Формула подсчета бжу (жиры)
         /// </summary>
         /// <returns></returns>
-        public int FormulaCountFatInGram(int calories, int percent)
+        public static int FormulaCountFatInGram(int calories, int percent)
         {
             return (int)(calories * ((double)percent / PERCENT) / CAL_IN_ONE_FAT);
         }
@@ -43,7 +43,7 @@ namespace FoodDiary.Model
         /// Формула подсчета бжу (углеводы)
         /// </summary>
         /// <returns></returns>
-        public int FormulaCountCarboInGram(int calories, int percent)
+        public static int FormulaCountCarboInGram(int calories, int percent)
         {
             return (int)(calories * ((double)percent / PERCENT) / CAL_IN_ONE_CARB);
         }

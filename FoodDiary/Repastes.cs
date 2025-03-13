@@ -9,5 +9,7 @@ namespace FoodDiary
         public int? IdRepastType { get; set; }
         public int? IdProduct { get; set; }
         public int? Weight { get; set; }
+
+       
     }
 }

@@ -48,14 +48,12 @@ namespace FoodDiary.Presenter
         /// Удалить элемент
         /// </summary>
         /// <param name="item"></param>
-        void RemoveIngredient(IngredientDB item)
+        public void RemoveIngredient(IngredientDB item)
         {
             using (DataBaseFoodDiaryContext context = new DataBaseFoodDiaryContext())
             {
-                var listIngredientsOrDishes = context.IngredientDB.ToList();
                 context.IngredientDB.Remove(item);
                 context.SaveChanges();
-
             }
 
         }

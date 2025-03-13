@@ -22,10 +22,10 @@
                     <TextBlock x:Name="textBlockAim" HorizontalAlignment="Left" Margin="1,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="100" Foreground="#FFE52A2A" Grid.Column="1"/>
                     <DatePicker x:Name="elementChoiseDate" HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top" Height="50" Width="200" Grid.ColumnSpan="2"/>
                     <TextBlock x:Name="textBlockDateToday" Grid.Column="1" HorizontalAlignment="Left" Margin="274,10,0,0" Text="Твое питание" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="149"/>
-                    <ComboBox x:Name="comboBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="189,62,0,0" VerticalAlignment="Top" Width="283" Height="46"/>
+                    <ComboBox x:Name="comboBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="189,62,0,0" VerticalAlignment="Top" Width="283" Height="46" SelectionChanged="comboBox1_SelectionChanged"/>
                     <Label Content="Завтрак" Grid.Column="1" HorizontalAlignment="Left" Margin="189,36,0,0" VerticalAlignment="Top"/>
                     <Label Content="Обед" Grid.Column="1" HorizontalAlignment="Left" Margin="189,139,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="comboBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="189,166,0,0" VerticalAlignment="Top" Width="283" Height="46" RenderTransformOrigin="0.5,0.5">
+                    <ComboBox x:Name="comboBox2" Grid.Column="1" HorizontalAlignment="Left" Margin="189,166,0,0" VerticalAlignment="Top" Width="283" Height="46" RenderTransformOrigin="0.5,0.5" SelectionChanged="comboBox2_SelectionChanged">
                     </ComboBox>
                     <Label Content="Перекус" Grid.Column="1" HorizontalAlignment="Left" Margin="197,250,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="comboBox3" Grid.Column="1" HorizontalAlignment="Left" Margin="189,280,0,0" VerticalAlignment="Top" Width="283" Height="46"/>

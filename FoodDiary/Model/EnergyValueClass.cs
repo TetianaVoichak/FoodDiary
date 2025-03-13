@@ -7,7 +7,7 @@ namespace FoodDiary.Model
     /// <summary>
     /// Класс для подсчета энергетической ценности
     /// </summary>
-    public abstract class EnergyValueClass : CountPFC
+    public abstract class EnergyValueClass
     {
         string name;
         float protein;
@@ -55,7 +55,7 @@ namespace FoodDiary.Model
         {
             get
             {
-                energyValue = carbohydrate * CAL_IN_ONE_CARB + protein * CAL_IN_ONE_PROTEIN + fat * CAL_IN_ONE_FAT;
+                energyValue = carbohydrate * CountPFC.CAL_IN_ONE_CARB + protein * CountPFC.CAL_IN_ONE_PROTEIN + fat * CountPFC.CAL_IN_ONE_FAT;
                 return energyValue;
             }
             set { energyValue = value; }
@@ -69,7 +69,7 @@ namespace FoodDiary.Model
         /// <returns></returns>
         public float EnergyValueMethod(float protein, float fat, float carbohydrate)
         {
-            return carbohydrate * CAL_IN_ONE_CARB + protein * CAL_IN_ONE_PROTEIN + fat * CAL_IN_ONE_FAT;
+            return carbohydrate * CountPFC.CAL_IN_ONE_CARB + protein * CountPFC.CAL_IN_ONE_PROTEIN + fat * CountPFC.CAL_IN_ONE_FAT;
         }
 
 

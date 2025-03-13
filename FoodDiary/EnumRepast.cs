@@ -10,6 +10,5 @@ namespace FoodDiary
         dinner,
         lanch,
         dinnerEvening
-
     }
 }
