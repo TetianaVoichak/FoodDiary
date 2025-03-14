@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FoodDiary.Dish">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Dish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodDiary.Ingredient">
+    <Position X="3" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAgAAgAIAAAAAAAAAAAwAAAAMAIAAAACAAAAAAAA=</HashCode>
+      <FileName>Model\Ingredient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodDiary.RepastClass">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAABAAAAAAgAAAAAAAIAAAAAACAAAAAAAA=</HashCode>
+      <FileName>RepastClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FoodDiary.Model.DayCount">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAgAAAEAAAAAAAAgAAAAAAAIAAAABACAAQAAAAA=</HashCode>
+      <FileName>Model\DayCount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="FoodDiary.EnumRepast" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAQAAAAAAAEAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumRepast.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

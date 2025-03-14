@@ -1,0 +1,76 @@
+﻿<Window x:Class="FoodDiary.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodDiary"
+        mc:Ignorable="d"
+        Title="Трапеза" Height="600" Width="1107" ResizeMode="NoResize">
+    <Grid Background="#FFC1E7E5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="396*"/>
+            <ColumnDefinition Width="593*"/>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TabControl Background="#FFC1E7E5" SelectionChanged="TabControl_SelectionChanged" Margin="0,0,-97,-275" Grid.ColumnSpan="6">
+            <TabItem Header="Поиск">
+                <Grid Background="#FFC1E7E5" Height="430" HorizontalAlignment="Left" Width="699" Margin="78,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="74*"/>
+                        <RowDefinition Height="141*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="262*"/>
+                        <ColumnDefinition Width="125*"/>
+                        <ColumnDefinition Width="312"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid x:Name="tableIngredientsOrDishes" MouseDoubleClick="tableIngredientsOrDishes_MouseDoubleClick" IsReadOnly="True" Grid.ColumnSpan="3" Margin="-2,-155,1,27" >
+                    </DataGrid>
+                    <TextBox x:Name="textBoxInputWeight" Text="Введите вес продукта" TextWrapping="Wrap" Margin="4,0,118,0" VerticalAlignment="Center" Height="35" Grid.Row="1" Cursor="" />
+                    <Button x:Name="buttonInputLineWithProduct" Content="+" VerticalAlignment="Center" Margin="169,0,29,0" Height="37" FontSize="18" Click="buttonInputLineWithProduct_Click" Grid.Row="1"/>
+                    <TextBox x:Name="textBoxSearch" Margin="-2,-178,89,0" VerticalAlignment="Top" Text="Поиск..." Width="300" Grid.ColumnSpan="2" />
+                    <Button x:Name="buttonSearch"  Margin="52,-193,5,0" VerticalAlignment="Top" Content="Поиск" Height="33" Click="buttonSearch_Click" RenderTransformOrigin="0.165,-2.796" Grid.Column="1"  />
+                    <Button Content="Добавить в БД" HorizontalAlignment="Left" Height="37" Margin="119,49,0,0" VerticalAlignment="Top" Width="57" Click="Button_Click_1" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="116,0,0,0" Text="Введите название продукта" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="textBoxProtein" Grid.Column="2" HorizontalAlignment="Left" Margin="143,147,0,0" Text="Белки" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2" />
+                    <TextBox x:Name="textBoxFat" Grid.Column="2" HorizontalAlignment="Left" Margin="143,29,0,0" Text="Жиры" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+                    <TextBox x:Name="textBoxCarb" Grid.Column="2" HorizontalAlignment="Left" Margin="143,59,0,0" Text="Углеводы" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,4.227" Grid.Row="1"/>
+                    <Button Content="Delete" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="28" Width="62" RenderTransformOrigin="0.252,0.14" Click="Button_Click_2" Grid.Row="1"/>
+                </Grid>
+
+            </TabItem>
+
+            <TabItem Header="Свое блюдо" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFC1E7E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="1161*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="buttonAddDish" Content="Добавить блюдо" HorizontalAlignment="Left" Margin="40,283,0,0" VerticalAlignment="Top" Height="25" Width="114" Click="buttonAddDish_Click" Grid.Column="3"/>
+                    <DataGrid x:Name="tableMyDishes" Margin="185,332,122,439" Grid.Column="3"/>
+                    <DataGrid x:Name="tableAddIngredients" Margin="0,44,122,763" Grid.Column="2" Grid.ColumnSpan="2" />
+                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Margin="34,332,0,0" Text="Вес блюда" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Создать новое блюдо / изменить выбранное из таблицы блюдо" HorizontalAlignment="Left" Margin="2,13,0,0" VerticalAlignment="Top" Width="368" Grid.Column="3"/>
+                    <Label Content="Добавленные блюда" Grid.Column="3" HorizontalAlignment="Left" Margin="490,13,0,0" VerticalAlignment="Top" Width="173"/>
+
+                </Grid>
+            </TabItem>
+
+
+
+
+
+
+        </TabControl>
+
+    </Grid>
+</Window>
