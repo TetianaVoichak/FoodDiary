@@ -6,7 +6,7 @@ using System.Text;
 namespace FoodDiary.Model
 {
     /// <summary>
-    /// Класс описывающий блюда из конкретной трапезы
+    /// A class that describes dishes from a specific meal
     /// </summary>
     class RepastClass : EnergyValueClass 
     {

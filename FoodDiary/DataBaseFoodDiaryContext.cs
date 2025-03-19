@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace FoodDiary
 {
+    //The DataBaseFoodDiaryContext represents the database context in Entity Framework Core
+    //that manages interactions with a SQL Server database
     public partial class DataBaseFoodDiaryContext : DbContext
     {
         public DataBaseFoodDiaryContext()

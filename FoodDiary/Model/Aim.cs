@@ -6,25 +6,27 @@ using System.Xml.Serialization;
 namespace FoodDiary.Model
 {
     /// <summary>
-    /// Класс описывает цель установливаемую пользователем
+    ///The class describes a goal set by the user. 
+    ///The goal includes how many calories per day can be consumed,
+    ///the amount of proteins, fats and carbohydrates.
     /// </summary>
     [Serializable]
     public class Aim
     {
-       
-        private int maxCalories; 
-      
+
+        private int maxCalories;
+
         private int proteinPercent;
-      
+
         private int fatPercent;
-      
+
         private int carbohydratePercent;
 
 
         /// <summary>
-        /// Максимально рекомендуемое число каллорий в день заданное пользователем
+        /// Maximum recommended number of calories per day set by the user
         /// </summary>
-       [XmlElement]
+        [XmlElement]
         public int MaxCalories
         {
             get
@@ -37,7 +39,7 @@ namespace FoodDiary.Model
             }
         }
         /// <summary>
-        /// Процент белков 
+        ///Percentage of proteins
         /// </summary>
         /// 
         [XmlElement]
@@ -47,7 +49,7 @@ namespace FoodDiary.Model
             set { proteinPercent = value; }
         }
         /// <summary>
-        /// Процент жиров
+        /// Fat percentage
         /// </summary>
         [XmlElement]
         public int FatPercent
@@ -56,7 +58,7 @@ namespace FoodDiary.Model
             set { fatPercent = value; }
         }
         /// <summary>
-        /// Процент углеводов
+        /// Carbohydrate percentage
         /// </summary>
         [XmlElement]
         public int CarbohydratePercent
@@ -65,55 +67,52 @@ namespace FoodDiary.Model
             set { carbohydratePercent = value; }
         }
         /// <summary>
-        /// Количество белков в граммах для БЖУ
+        ///Amount of proteins in grams for PFC (Proteins, Fats, Carbohydrates)
         /// </summary>
         [XmlIgnore]
         public int ProteinGram
         {
             get { return CountPFC.FormulaCountProteinInGram(maxCalories, proteinPercent); }
-            //set { maxCalories = value; }
         }
         /// <summary>
-        /// Количество жиров в граммах для БЖУ 
+        /// Amount of fat in grams for PFC (Proteins, Fats, Carbohydrates)
         /// </summary>
         [XmlIgnore]
         public int FatGram
         {
-            get { return CountPFC.FormulaCountFatInGram(maxCalories,fatPercent); }
-            //set { fatPercent = value; }
+            get { return CountPFC.FormulaCountFatInGram(maxCalories, fatPercent); }
         }
         /// <summary>
-        /// Количество углеводов в граммах для БЖУ 
+        /// Amount of carbohydrates in grams for PFC (Proteins, Fats, Carbohydrates)
         /// </summary>
         [XmlIgnore]
         public int CarbohydrateGram
         {
-            get { return CountPFC.FormulaCountCarboInGram(maxCalories,carbohydratePercent); }
-            //set { carbohydratePercent = value; }
+            get { return CountPFC.FormulaCountCarboInGram(maxCalories, carbohydratePercent); }
         }
-        
+
         public Aim()
         {
 
         }
         /// <summary>
-        /// В сумме белки,жиры и углеводы не больше 100%, иначе выставляются рекомендуемые значения
+        ///In total, proteins, fats and carbohydrates are no more than 100%, otherwise the recommended values ​​are set
         /// </summary>
-        /// <param name="maxCalories">максимально рекомендуемое число каллорий в день</param>
-        /// <param name="proteinPercent">Процент белков</param>
-        /// <param name="fatPercent">Процент жиров</param>
-        /// <param name="carbohydratePercent">Процент углеводов</param>
-        public Aim( int maxCalories, int proteinPercent,int fatPercent, int carbohydratePercent)
+        /// <param name="maxCalories">maximum recommended daily calorie intake</param>
+        /// <param name="proteinPercent">Percentage of proteins</param>
+        /// <param name="fatPercent">Fat percentage</param>
+        /// <param name="carbohydratePercent">Percentage of carbohydrates</param>
+        public Aim(int maxCalories, int proteinPercent, int fatPercent, int carbohydratePercent)
         {
-            if(maxCalories < 0 || maxCalories > 20000)
+            if (maxCalories < 0 || maxCalories > 20000)
             {
-                throw new Exception("Слишком большое значение в поле каллорийность!");
+                throw new Exception("The value in the calorie field is too high!");
             }
             else
             {
                 this.maxCalories = maxCalories;
             }
-            if((proteinPercent + fatPercent + carbohydratePercent) <= 100 && proteinPercent > 0 && fatPercent > 0 && carbohydratePercent > 0 )
+            if ((proteinPercent + fatPercent + carbohydratePercent) <= 100 && proteinPercent > 0 && fatPercent > 0 && carbohydratePercent > 0)
             {
                 this.proteinPercent = proteinPercent;
                 this.fatPercent = fatPercent;
@@ -121,15 +120,9 @@ namespace FoodDiary.Model
             }
             else
             {
-                //this.proteinPercent = 20;
-                //this.fatPercent = 30;
-                //this.carbohydratePercent = 50;
-                throw new Exception("Не допустимые значения для БЖУ! В сумме должно быть не больше 100%!");
+                throw new Exception("Inadmissible values ​​for PFC! The total should not be more than 100%!");
             }
         }
-
-
-       
 
     }
 }

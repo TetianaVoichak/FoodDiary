@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FoodDiary.Model
 {
-    //Класс описывающий ингредиент
+    //Class describing the ingredient
     public class Ingredient : EnergyValueClass
     {
         int idIngredient;
@@ -24,17 +24,6 @@ namespace FoodDiary.Model
             Fat = fat;
             Carbohydrate = carbohydrate;
             EnergyValue = EnergyValueMethod(protein, fat, carbohydrate);
-
         }
-        //public Ingredient(int id, string name, double protein, double fat, double carbohydrate, double resultEnergy)
-        //{
-        //    idIngredient = id;
-        //    Name = name;
-        //    Protein = protein;
-        //    Fat = fat;
-        //    Carbohydrate = carbohydrate;
-        //    EnergyValue = resultEnergy;
-        //}
-
     }
 }

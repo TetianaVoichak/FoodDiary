@@ -7,7 +7,8 @@ using FoodDiary.Presenter;
 
 namespace FoodDiary
 {
-    public /*partial*/ class IngredientDB
+
+    public class IngredientDB
     {
         public int Id { get; set; }
         public string Name { get; set; }

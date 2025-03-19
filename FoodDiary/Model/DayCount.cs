@@ -6,7 +6,7 @@ using FoodDiary.Presenter;
 namespace FoodDiary.Model
 {
     /// <summary>
-    /// Класс описывающий один день приема пищи и подсчета каллорий
+    /// A class DayCount describing one day of eating and calorie counting
     /// </summary>
     class DayCount : EnergyValueClass
     {
@@ -21,16 +21,16 @@ namespace FoodDiary.Model
         {
             get { return idDayCount; }
         }
-        
+
         /// <summary>
-        ///Текущее число каллорий, которое потратил пользователь
+        ///The current number of calories the user has burned
         /// </summary>
         public int CaloriesNow
         {
             get { return CountCalorNow(); }
         }
         /// <summary>
-        /// Максимально рекомендуемое количество каллорий
+        /// Maximum recommended amount of calories
         /// </summary>
         public int CaloriesMax
         {
@@ -41,10 +41,10 @@ namespace FoodDiary.Model
             }
         }
 
-       
+
 
         /// <summary>
-        /// Количество белков рекоменудемое в день
+        /// Recommended daily protein intake
         /// </summary>
         public int ProteinGram
         {
@@ -54,7 +54,7 @@ namespace FoodDiary.Model
             }
         }
         /// <summary>
-        /// Количество жиров рекомендуемое в день
+        /// Recommended daily fat intake
         /// </summary>
         public double FatGram
         {
@@ -64,7 +64,7 @@ namespace FoodDiary.Model
             }
         }
         /// <summary>
-        /// Количество углеводов рекомендуемое в день
+        /// Recommended daily carbohydrate intake
         /// </summary>
         public double CarbohydrateGram
         {
@@ -108,7 +108,7 @@ namespace FoodDiary.Model
             repastes.Add(repast);
         }
         /// <summary>
-        /// Число потраченных каллорий на текущий момент
+        /// Number of calories burned at the moment
         /// </summary>
         /// <returns></returns>
         int CountCalorNow()

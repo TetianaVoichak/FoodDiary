@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace FoodDiary.Model
 {
-    
+
     /// <summary>
-    /// Класс описывающий блюдо
+    /// Class describing a dish
     /// </summary>
-    class Dish: EnergyValueClass
+    class Dish : EnergyValueClass
     {
         int idDish;
         int maxCountDishes;
@@ -25,7 +25,7 @@ namespace FoodDiary.Model
             get { return idDish; }
         }
         /// <summary>
-        /// Название блюда
+        /// Name of the dish
         /// </summary>
         public new string Name
         {
@@ -33,7 +33,7 @@ namespace FoodDiary.Model
         }
 
         /// <summary>
-        /// Энергетическая ценность
+        /// Energy value
         /// </summary>
         public new int EnergyValue
         {
@@ -47,7 +47,7 @@ namespace FoodDiary.Model
         }
 
         /// <summary>
-        /// Количество в граммах блюдо
+        /// Quantity in grams dish
         /// </summary>
         public int CountDishes
         {
@@ -61,7 +61,7 @@ namespace FoodDiary.Model
             }
         }
         /// <summary>
-        /// Количество углеводов в блюде
+        /// Amount of carbohydrates in a dish
         /// </summary>
         public float MaxCarbohydrate
         {
@@ -71,7 +71,7 @@ namespace FoodDiary.Model
             }
         }
         /// <summary>
-        /// Количество белков в блюде
+        /// Amount of proteins in a dish
         /// </summary>
         public float MaxProtein
         {
@@ -79,7 +79,7 @@ namespace FoodDiary.Model
         }
 
         /// <summary>
-        /// Количество жиров в блюде
+        /// Amount of fat in a dish
         /// </summary>
         public float MaxFat
         {
@@ -91,9 +91,9 @@ namespace FoodDiary.Model
             idDish = id;
             this.name = name;
         }
-      
+
         /// <summary>
-        /// Сумма общих жиров, белков и углеводов в блюде
+        /// The sum of total fats, proteins and carbohydrates in a dish
         /// </summary>
         /// <param name="ingredient"></param>
         void CountMax(Ingredient ingredient)
@@ -103,7 +103,7 @@ namespace FoodDiary.Model
             maxCarbohydrate += ingredient.Carbohydrate;
         }
         /// <summary>
-        /// добавить ингредиент в блюдо
+        /// add an ingredient to a dish
         /// </summary>
         /// <param name="ingredient"></param>
         /// <param name="count"></param>
@@ -115,7 +115,7 @@ namespace FoodDiary.Model
         }
 
         /// <summary>
-        /// узнать каллорийность блюда
+        /// find out the calorie content of a dish
         /// </summary>
         /// <returns></returns>
         int EnergyValueMethodForDish()

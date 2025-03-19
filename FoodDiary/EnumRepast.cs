@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FoodDiary
 {
-    public enum EnumRepast //трапеза
+    public enum EnumRepast //repast
     {
         breakfast,
         dinner,

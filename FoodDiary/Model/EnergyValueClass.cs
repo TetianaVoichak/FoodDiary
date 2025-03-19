@@ -5,7 +5,7 @@ using System.Text;
 namespace FoodDiary.Model
 {
     /// <summary>
-    /// Класс для подсчета энергетической ценности
+    /// Class for calculating energy value
     /// </summary>
     public abstract class EnergyValueClass
     {
@@ -16,7 +16,7 @@ namespace FoodDiary.Model
         float energyValue;
 
         /// <summary>
-        /// Название ингредиента или блюда, для чего подсчитывается энергетическая ценность
+        /// The name of the ingredient or dish for which the energy value is calculated
         /// </summary>
         public string Name
         {
@@ -24,7 +24,7 @@ namespace FoodDiary.Model
             set { name = value; }
         }
         /// <summary>
-        /// Белки 
+        /// proteins  
         /// </summary>
         public float Protein
         {
@@ -32,7 +32,7 @@ namespace FoodDiary.Model
             set { protein = value; }
         }
         /// <summary>
-        /// Жиры
+        /// Fat
         /// </summary>
         public float Fat
         {
@@ -40,7 +40,7 @@ namespace FoodDiary.Model
             set { fat = value; }
         }
         /// <summary>
-        /// Углеводы
+        /// Carbohydrate
         /// </summary>
         public float Carbohydrate
         {
@@ -49,7 +49,7 @@ namespace FoodDiary.Model
         }
 
         /// <summary>
-        /// ????
+        /// energy value for the product
         /// </summary>
         public float EnergyValue
         {
@@ -61,7 +61,7 @@ namespace FoodDiary.Model
             set { energyValue = value; }
         }
         /// <summary>
-        /// ????
+        /// energy value for a product with input parameters
         /// </summary>
         /// <param name="protein"></param>
         /// <param name="fat"></param>

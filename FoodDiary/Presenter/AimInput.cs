@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace FoodDiary.Presenter
 {
-    
+    //class describing the user's goal
     class AimInput
     {
         Aim aim;
@@ -34,26 +34,19 @@ namespace FoodDiary.Presenter
             get { return aim.CarbohydrateGram; }
         }
 
-        /// <summary>
-        /// Процент белков 
-        /// </summary>
-        /// 
+       
         public int ProteinPercent
         {
             get { return aim.ProteinPercent; }
             
         }
-        /// <summary>
-        /// Процент жиров
-        /// </summary>
+        
 
         public int FatPercent
         {
             get { return aim.FatPercent; }
         }
-        /// <summary>
-        /// Процент углеводов
-        /// </summary>
+        
 
         public int CarbohydratePercent
         {
@@ -70,20 +63,20 @@ namespace FoodDiary.Presenter
             AimSerializer();
             AimDeserializer();
         }
- 
+
 
         /// <summary>
-        /// Сериализация в xml класса Aim
+        /// Serialization in xml of the Aim class
         /// </summary>
         void AimSerializer()
         {
             FileStream stream = new FileStream("Aim.xml", FileMode.Create, FileAccess.Write, FileShare.Read);
-            // Сохраняем объект в XML-файле на диске(СЕРИАЛИЗАЦИЯ).
+            // We save the object in an XML file on disk (SERIALIZATION)
             serializer.Serialize(stream, aim);
             stream.Close();
         }
         /// <summary>
-        /// Десериализация класса Aim
+        /// Deserialization of the Aim class
         /// </summary>
         void AimDeserializer()
         {
