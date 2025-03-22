@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace FoodDiary
 {
+    //Presents a daily menu with restrictions on calories and macronutrients.
     public partial class TableDaysMenu
     {
         public int IdDate { get; set; }

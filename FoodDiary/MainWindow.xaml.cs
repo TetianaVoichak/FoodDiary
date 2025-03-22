@@ -71,7 +71,7 @@ namespace FoodDiary
         /// <param name="e"></param>
         private void buttonAddDish1_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1(EnumRepast.breakfast, elementChoiseDate.DisplayDate);
+            WindowRepast window1 = new WindowRepast(EnumRepast.breakfast, elementChoiseDate.DisplayDate);
             window1.Show();
            
         }
@@ -100,7 +100,7 @@ namespace FoodDiary
         /// <param name="e"></param>
         private void buttonAddDish2_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1(EnumRepast.dinner, elementChoiseDate.DisplayDate);
+            WindowRepast window1 = new WindowRepast(EnumRepast.dinner, elementChoiseDate.DisplayDate);
             window1.Show();      
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace FoodDiary
         /// <param name="e"></param>
         private void buttonAddDish3_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1(EnumRepast.dinnerEvening, elementChoiseDate.DisplayDate);
+            WindowRepast window1 = new WindowRepast(EnumRepast.dinnerEvening, elementChoiseDate.DisplayDate);
             window1.Show();  
         }
         /// <summary>
@@ -120,7 +120,7 @@ namespace FoodDiary
         /// <param name="e"></param>
         private void buttonAddDish4_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1(EnumRepast.lanch, elementChoiseDate.DisplayDate);
+            WindowRepast window1 = new WindowRepast(EnumRepast.lanch, elementChoiseDate.DisplayDate);
             window1.Show();
            
         }

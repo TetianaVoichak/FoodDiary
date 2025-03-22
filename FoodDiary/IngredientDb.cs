@@ -7,7 +7,7 @@ using FoodDiary.Presenter;
 
 namespace FoodDiary
 {
-
+    //Represents an ingredient in the database with its main nutritional characteristics.
     public class IngredientDB
     {
         public int Id { get; set; }

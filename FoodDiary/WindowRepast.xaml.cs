@@ -17,7 +17,7 @@ namespace FoodDiary
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class WindowRepast : Window
     {
         /// <summary>
         /// В список записываем добавленные продукты(или блюда) что бы передать на первое окно в меню дня
@@ -28,13 +28,13 @@ namespace FoodDiary
         DateTime currentDate;
         Repastes repastes;
 
-        public Window1()
+        public WindowRepast()
         {
             InitializeComponent();
             ingredientsInput = new IngredientsInput();
             tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
         }
-        public Window1(EnumRepast er, DateTime d)
+        public WindowRepast(EnumRepast er, DateTime d)
         {
             InitializeComponent();
             currentRepast = er;

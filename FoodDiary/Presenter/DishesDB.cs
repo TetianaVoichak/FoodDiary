@@ -5,6 +5,7 @@ using FoodDiary.Model;
 
 namespace FoodDiary.Presenter
 {
+    //class is designed to work with Dishes
     class DishesDB : IngredientsInput
     {
         public Dish dish;
@@ -37,10 +38,5 @@ namespace FoodDiary.Presenter
         {
             ingredientsList.Add(item);
         }
-        public void SaveDish()
-        {
-
-        }
-
     }
 }

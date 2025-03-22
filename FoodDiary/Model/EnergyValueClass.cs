@@ -71,7 +71,5 @@ namespace FoodDiary.Model
         {
             return carbohydrate * CountPFC.CAL_IN_ONE_CARB + protein * CountPFC.CAL_IN_ONE_PROTEIN + fat * CountPFC.CAL_IN_ONE_FAT;
         }
-
-
     }
 }

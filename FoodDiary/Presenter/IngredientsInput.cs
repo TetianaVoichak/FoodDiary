@@ -9,29 +9,19 @@ using System.Linq;
 
 namespace FoodDiary.Presenter
 {
-    class IngredientsInput 
+    //Class designed to work with the DB for the Ingredient object
+    class IngredientsInput
     {
         Ingredient ingr = new Ingredient();
         IngredientDB ingrBD;
-        //public List<Ingredient> ingredients;
 
-        //List<Ingredient> ingredientsList = new List<Ingredient>();
-        //int value;
-
-        //public DbSet<Ingredient> Ingredients { get; set; }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; DateBase = DataBaseFoodDiary; Trusted_Connection=True");
-
-        //}
         public IngredientsInput()
         {
             ingrBD = new IngredientDB();
         }
 
         /// <summary>
-        /// Загрузка из БД списка ингредиентов
+        /// Loading from the database the list of ingredients
         /// </summary>
         /// <returns></returns>
         public List<IngredientDB> IngredientLoad()
@@ -39,15 +29,13 @@ namespace FoodDiary.Presenter
             using (DataBaseFoodDiaryContext context = new DataBaseFoodDiaryContext())
             {
                 var listIngredientsOrDishes = context.IngredientDB.ToList();
-                return listIngredientsOrDishes; 
+                return listIngredientsOrDishes;
             }
         }
-
-
         /// <summary>
-        /// Удалить элемент
+        /// Delete item
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="item">ingredient</param>
         public void RemoveIngredient(IngredientDB item)
         {
             using (DataBaseFoodDiaryContext context = new DataBaseFoodDiaryContext())
@@ -55,12 +43,10 @@ namespace FoodDiary.Presenter
                 context.IngredientDB.Remove(item);
                 context.SaveChanges();
             }
-
         }
         /// <summary>
-        /// Добавление новой записи в базу
+        /// Adding a new record to the database
         /// </summary>
-        /// <param name="item"></param>
         public void AddIngredients(string name, float protein, float fat, float carboh)
         {
             using (DataBaseFoodDiaryContext context = new DataBaseFoodDiaryContext())
@@ -78,7 +64,7 @@ namespace FoodDiary.Presenter
             }
         }
         /// <summary>
-        /// Узнать последний индекс в базе и вернуть следующий по значению
+        /// Find the last index in the database and return the next one by value
         /// </summary>
         /// <returns></returns>
         int NextAfterLastIndex()
@@ -89,7 +75,5 @@ namespace FoodDiary.Presenter
                 return max + 1;
             }
         }
-        
-
     }
 }
