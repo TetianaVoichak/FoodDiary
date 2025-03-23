@@ -15,12 +15,13 @@ using System.Linq;
 namespace FoodDiary
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Interaction logic for WindowRepast.xaml
     /// </summary>
     public partial class WindowRepast : Window
     {
         /// <summary>
-        /// В список записываем добавленные продукты(или блюда) что бы передать на первое окно в меню дня
+        /// We add the added products (or dishes) to the list to transfer to the first window
+        /// in the menu of the day
         /// </summary>
 
         IngredientsInput ingredientsInput;
@@ -43,75 +44,29 @@ namespace FoodDiary
             tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
 
         }
-        /// <summary>
-        /// Добавить в текущий день свое меню(продукты или блюда)
-        /// </summary>
-        /// <param name="listProduct">Список продуктов которые есть в меню</param>
-        /// <param name="enum">Какая из трапез(завтрак, обед и тд)</param>
-        //public void AddListMyIngriedientOrDishes(out List<IngredientDb> listProduct, out EnumRepast @enum)
-        //{
-
-        //}
-
         private void buttonAddDish_Click(object sender, RoutedEventArgs e)
         {
-
             DishesDB dishesDB = new DishesDB();
-            //textBlockDish.Text = dishesDB.Name + " " + dishesDB.ingredients + " " + dishesDB;
-
-          
         }
-
-
 
         private void tableIngredientsOrDishes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             textBoxInputWeight.Text = "";
-            //IngredientDb ingr = new IngredientDb();
-            //ingr.Id = tableIngredientsOrDishes.CurrentCell;
-
-            //listIngr.Add( = tableIngredientsOrDishes.CurrentCell.Column[0] = 
-            //listIngr.Add(tableIngredientsOrDishes.CurrentCell as IngredientDb);
             IngredientDB ingr = (IngredientDB)tableIngredientsOrDishes.SelectedItem;
-           // listIngr.Add(ingr);
         }
 
 
         private void buttonInputLineWithProduct_Click(object sender, RoutedEventArgs e)
         {
             try
-            {/*
-                 if (listIngr != null)
-                 {
-                  using (databasefooddiarycontext context = new databasefooddiarycontext())
-                  {
-                      context.ingredientdb.addrange(listingr);
-                  }
-                  }*/
-
-                
-               
+            {
                 Repastes repastes = new Repastes();
-
-
                 repastes.IdProduct = int.Parse(tableIngredientsOrDishes.CurrentItem.ToString());
-               
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void buttonSearch_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void textBoxProtein_MouseEnter(object sender, MouseEventArgs e)
@@ -119,14 +74,9 @@ namespace FoodDiary
             textBoxProtein.Text = "";
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
 
         /// <summary>
-        /// Добавление записи в бд
+        /// Adding a record to the database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -143,7 +93,7 @@ namespace FoodDiary
             }
         }
         /// <summary>
-        /// Удаление записи из бд
+        /// Deleting a record from the database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -151,15 +101,14 @@ namespace FoodDiary
         {
             try
             {
-                //MessageBox.Show("Do you realy want to delete selected item?");
                 ingredientsInput.RemoveIngredient((IngredientDB)tableIngredientsOrDishes.SelectedItem);
                 tableIngredientsOrDishes.ItemsSource = ingredientsInput.IngredientLoad();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
     }
 }

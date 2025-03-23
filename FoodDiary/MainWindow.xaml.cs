@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 using FoodDiary.Presenter;
 using FoodDiary.Model;
 
-namespace FoodDiary    
+namespace FoodDiary
 {
- 
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -36,9 +36,10 @@ namespace FoodDiary
             InputValueInTextBlockAimPercent();
         }
 
-        
+
         /// <summary>
-        /// Записать значения цели(макимальная каллорийность, БЖУ в процентах )
+        /// enter the target values ​​(Maximum calories, 
+        /// PFC(proteins, fats, carbohydrates) in percentages)
         /// </summary>
         private void InputValueInTextBlockAimPercent()
         {
@@ -49,7 +50,8 @@ namespace FoodDiary
         }
 
         /// <summary>
-        /// Записать значения цели(макимальная каллорийность, БЖУ в граммх)
+        /// enter the target values​​(Maximum calories, 
+        /// PFC(proteins, fats, carbohydrates) in grams)
         /// </summary>
         private void InputValueInTextBlockAimGram()
         {
@@ -58,14 +60,10 @@ namespace FoodDiary
             textBlockMaxFlat.Text = aimInput.FatGram.ToString();
             textBlockMaxUglev.Text = aimInput.CarbohydrateGram.ToString();
         }
-       
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
+
 
         /// <summary>
-        ///   При ряде действий будет добавлен завтрак
+        /// A number of actions will add breakfast
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -73,10 +71,10 @@ namespace FoodDiary
         {
             WindowRepast window1 = new WindowRepast(EnumRepast.breakfast, elementChoiseDate.DisplayDate);
             window1.Show();
-           
+
         }
         /// <summary>
-        /// Сохранение значения цели
+        /// Saving the value of the goal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -86,52 +84,42 @@ namespace FoodDiary
             {
                 aimInput = new AimInput(int.Parse(textBoxCal.Text), int.Parse(textBoxProtein.Text), int.Parse(TextBoxFat.Text), int.Parse(TextBoxCar.Text));
                 InputValueInTextBlockAimGram();
-                MessageBox.Show("Запись сохранена!");
+                MessageBox.Show("The entry has been saved!");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
         /// <summary>
-        ///   При ряде действий будет добавлен обед
+        /// A number of actions will add lanch
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonAddDish2_Click(object sender, RoutedEventArgs e)
         {
-            WindowRepast window1 = new WindowRepast(EnumRepast.dinner, elementChoiseDate.DisplayDate);
-            window1.Show();      
+            WindowRepast window1 = new WindowRepast(EnumRepast.lanch, elementChoiseDate.DisplayDate);
+            window1.Show();
         }
         /// <summary>
-        ///   При ряде действий будет добавлен полудник
+        /// A number of actions will add dinner
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonAddDish3_Click(object sender, RoutedEventArgs e)
         {
-            WindowRepast window1 = new WindowRepast(EnumRepast.dinnerEvening, elementChoiseDate.DisplayDate);
-            window1.Show();  
+            WindowRepast window1 = new WindowRepast(EnumRepast.dinner, elementChoiseDate.DisplayDate);
+            window1.Show();
         }
         /// <summary>
-        ///   При ряде действий будет добавлен ужин
+        /// A number of actions will add dinner evening
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonAddDish4_Click(object sender, RoutedEventArgs e)
         {
-            WindowRepast window1 = new WindowRepast(EnumRepast.lanch, elementChoiseDate.DisplayDate);
+            WindowRepast window1 = new WindowRepast(EnumRepast.dinnerEvening, elementChoiseDate.DisplayDate);
             window1.Show();
-           
-        }
-
-        private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
         }
     }

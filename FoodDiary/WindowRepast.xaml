@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <TabControl Background="#FFC1E7E5" SelectionChanged="TabControl_SelectionChanged" Margin="0,0,-97,-275" Grid.ColumnSpan="6">
+        <TabControl Background="#FFC1E7E5" Margin="0,0,-97,-275" Grid.ColumnSpan="6">
             <TabItem Header="Search">
                 <Grid Background="#FFC1E7E5" Height="430" HorizontalAlignment="Left" Width="699" Margin="78,0,0,0">
                     <Grid.RowDefinitions>
@@ -35,7 +35,7 @@
                     <TextBox x:Name="textBoxInputWeight" Text="Enter the weight of the product" TextWrapping="Wrap" Margin="4,0,118,0" VerticalAlignment="Center" Height="35" Grid.Row="1" Cursor="" />
                     <Button x:Name="buttonInputLineWithProduct" Content="+" VerticalAlignment="Center" Margin="169,0,29,0" Height="37" FontSize="18" Click="buttonInputLineWithProduct_Click" Grid.Row="1"/>
                     <TextBox x:Name="textBoxSearch" Margin="-2,-178,89,0" VerticalAlignment="Top" Text="Search..." Width="300" Grid.ColumnSpan="2" />
-                    <Button x:Name="buttonSearch"  Margin="52,-193,5,0" VerticalAlignment="Top" Content="Search" Height="33" Click="buttonSearch_Click" RenderTransformOrigin="0.165,-2.796" Grid.Column="1"  />
+                    <Button x:Name="buttonSearch"  Margin="52,-193,5,0" VerticalAlignment="Top" Content="Search" Height="33" RenderTransformOrigin="0.165,-2.796" Grid.Column="1"  />
                     <Button Content="Add to DB" HorizontalAlignment="Left" Height="37" Margin="119,49,0,0" VerticalAlignment="Top" Width="71" Click="Button_Click_1" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
                     <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="116,0,0,0" Text="Enter product name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
                     <TextBox x:Name="textBoxProtein" Grid.Column="2" HorizontalAlignment="Left" Margin="143,147,0,0" Text="Protein" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2" />

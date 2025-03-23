@@ -23,10 +23,10 @@
                     <TextBlock x:Name="textBlockAim" HorizontalAlignment="Left" Margin="1,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="100" Foreground="#FFE52A2A" Grid.Column="2"/>
                     <DatePicker x:Name="elementChoiseDate" HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top" Height="50" Width="200" Grid.ColumnSpan="3"/>
                     <TextBlock x:Name="textBlockDateToday" Grid.Column="2" HorizontalAlignment="Left" Margin="274,10,0,0" Text="Твое питание" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="149"/>
-                    <ComboBox x:Name="comboBox1" Grid.Column="2" HorizontalAlignment="Left" Margin="189,62,0,0" VerticalAlignment="Top" Width="283" Height="46" SelectionChanged="comboBox1_SelectionChanged"/>
+                    <ComboBox x:Name="comboBox1" Grid.Column="2" HorizontalAlignment="Left" Margin="189,62,0,0" VerticalAlignment="Top" Width="283" Height="46"/>
                     <Label Content="Breakfast" Grid.Column="2" HorizontalAlignment="Left" Margin="189,36,0,0" VerticalAlignment="Top"/>
                     <Label Content="Dinner" Grid.Column="2" HorizontalAlignment="Left" Margin="189,139,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="comboBox2" Grid.Column="2" HorizontalAlignment="Left" Margin="189,166,0,0" VerticalAlignment="Top" Width="283" Height="46" RenderTransformOrigin="0.5,0.5" SelectionChanged="comboBox2_SelectionChanged">
+                    <ComboBox x:Name="comboBox2" Grid.Column="2" HorizontalAlignment="Left" Margin="189,166,0,0" VerticalAlignment="Top" Width="283" Height="46" RenderTransformOrigin="0.5,0.5">
                     </ComboBox>
                     <Label Content="Snack" Grid.Column="2" HorizontalAlignment="Left" Margin="197,250,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="comboBox3" Grid.Column="2" HorizontalAlignment="Left" Margin="189,280,0,0" VerticalAlignment="Top" Width="283" Height="46"/>
@@ -64,7 +64,7 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="buttonEditAim" Content="Edit target" VerticalAlignment="Top" HorizontalAlignment="Left"   Margin="0,50,0,0"  Height="50" Width="244" FontSize="24" Click="buttonEditAim_Click" Grid.ColumnSpan="2" Grid.Column="3" />
 
-                    <Label Content="Caloric" HorizontalAlignment="Left" Margin="0,131,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="3"/>
+                    <Label Content="Calories" HorizontalAlignment="Left" Margin="0,131,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="3"/>
                     <Label Content="Proteins(%)" HorizontalAlignment="Left" Margin="0,174,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="3"/>
 
                     <Label Content="Fats(%)" HorizontalAlignment="Left" Margin="0,230,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="3"/>
